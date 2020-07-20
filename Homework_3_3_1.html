@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #pic, #big {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #pic {
+            width: 1000px;
+            margin: 0 auto;
+            /* border: 1px solid red; */
+        }
+
+        #big {
+            width: 1920px ; 
+            height: 900px;
+            /* border: 1px solid red; */
+            margin: 0 auto;
+            padding: 20px;
+            align-items: center;
+        }
+
+        img {
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div id="pic"></div>
+    <div id="big" onclick="big.innerHTML = '';"></div>
+
+
+    <script>
+        let s='', s1='';
+
+        for (i=1; i<=3; i++) {
+            s+=`<img onclick="bigp(${i})" src="pictures/${i}.jpg" style="height: 150px;">`
+        }
+
+        pic.innerHTML = s;
+
+        function bigp(p) {
+            s1 += `<img style="height: 100%" onclick="big.innerHTML = ''" src="pictures/${p}.jpg">`;
+            big.innerHTML = s1;
+            s1='';
+        }
+    
+    </script>
+<!-- 
+    <img src="pictures/1.jpg"> -->
+</body>
+</html>
